@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conference Hall Management</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #eef2ff, #f8fafc);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 600px;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            text-align: center;
+            color: #4f46e5;
+            font-size: 30px;
+        }
+
+        p {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 12px;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #334155;
+        }
+
+        input[type="number"],
+        input[type="date"],
+        input[type="time"] {
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        h3 {
+            color: #334155;
+            margin-top: 25px;
+        }
+
+        .resource {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 8px;
+            margin: 8px 0;
+        }
+
+        button {
+            margin-top: 25px;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: #4f46e5;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #3730a3;
+        }
+
+        .result-card {
+            margin-top: 20px;
+            padding: 18px;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            background: #f8fafc;
+        }
+
+        .result-card h3 {
+            margin-top: 0;
+            color: #4f46e5;
+        }
+
+        .result-card p {
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+    </style>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Conference Hall Management</h1>
+
+        <p>Find the right conference hall for your meeting</p>
+
+        <form id="hallForm">
+
+            <label for="participants">
+                Number of Participants
+            </label>
+
+            <input
+                type="number"
+                id="participants"
+                placeholder="Enter number of participants"
+                min="1"
+                required
+            >
+
+
+            <label for="date">
+                Date
+            </label>
+
+            <input
+                type="date"
+                id="date"
+                required
+            >
+
+
+            <label for="startTime">
+                Start Time
+            </label>
+
+            <input
+                type="time"
+                id="startTime"
+                required
+            >
+
+
+            <label for="endTime">
+                End Time
+            </label>
+
+            <input
+                type="time"
+                id="endTime"
+                required
+            >
+
+
+            <h3>Required Resources</h3>
+
+
+            <div class="resource">
+
+                <input
+                    type="checkbox"
+                    value="Projector"
+                >
+
+                <span>Projector</span>
+
+            </div>
+
+
+            <div class="resource">
+
+                <input
+                    type="checkbox"
+                    value="Video Conferencing"
+                >
+
+                <span>Video Conferencing</span>
+
+            </div>
+
+
+            <div class="resource">
+
+                <input
+                    type="checkbox"
+                    value="Microphone"
+                >
+
+                <span>Microphone</span>
+
+            </div>
+
+
+            <div class="resource">
+
+                <input
+                    type="checkbox"
+                    value="Whiteboard"
+                >
+
+                <span>Whiteboard</span>
+
+            </div>
+
+
+            <button type="submit">
+                Find Available Hall
+            </button>
+
+        </form>
+
+
+<!-- AI Booking Assistant -->
+
+<h3>AI Booking Assistant</h3>
+
+<textarea
+    id="aiMessage"
+    rows="4"
+    placeholder="Example: I need a hall tomorrow from 2 PM to 4 PM for 40 people with a projector and video conferencing."
+    style="
+        width: 100%;
+        box-sizing: border-box;
+        padding: 12px;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        font-family: Arial;
+        font-size: 14px;
+        resize: vertical;
+    "
+></textarea>
+
+<br><br>
+
+<button type="button" id="aiSearchButton">
+    Find Hall with AI
+</button>
+
+
+<div id="results"></div>
+    </div>
+
+
+    <!-- For deployment, replace the value below with your public FastAPI URL. -->
+    <script>window.API_BASE_URL = window.API_BASE_URL || "http://127.0.0.1:8000";</script>
+    <script src="script.js"></script>
+
+</body>
+</html>

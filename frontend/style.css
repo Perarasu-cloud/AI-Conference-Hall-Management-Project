@@ -1,0 +1,46 @@
+/* Results section */
+
+#results {
+    margin-top: 30px;
+}
+
+.result-title {
+    color: #334155;
+    margin-bottom: 15px;
+}
+
+.hall-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.hall-card h3 {
+    margin-top: 0;
+    color: #4f46e5;
+}
+
+.hall-card p {
+    text-align: left;
+    margin: 8px 0;
+    color: #475569;
+}
+
+.available {
+    display: inline-block;
+    background: #dcfce7;
+    color: #166534;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.no-result {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 15px;
+    border-radius: 10px;
+}
